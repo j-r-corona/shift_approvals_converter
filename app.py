@@ -16,7 +16,7 @@ def login():
         if username == st.secrets["auth"]["username"] and password == st.secrets["auth"]["password"]:
             st.session_state["logged_in"] = True
             st.success("✅ Login successful")
-            st.experimental_rerun()  # refresh page to show app
+            st.rerun()  # refresh page to show app
         else:
             st.error("❌ Invalid credentials")
 
@@ -111,4 +111,5 @@ if uploaded_file:
         data=zip_buffer,
         file_name="processed_shifts.zip",
         mime="application/zip"
+
     )
